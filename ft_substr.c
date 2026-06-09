@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luafranc <luafranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 16:07:45 by luafranc          #+#    #+#             */
-/*   Updated: 2026/06/09 15:52:35 by luafranc         ###   ########.fr       */
+/*   Created: 2026/06/04 09:15:30 by luafranc          #+#    #+#             */
+/*   Updated: 2026/06/04 13:29:41 by luafranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	const unsigned char	*s1_new;
-	const unsigned char	*s2_new;
-	size_t				i;
+	char	*sub;
+	size_t	s_len;
+	size_t	rest;
+	size_t	real_size;
 
-	i = 0;
-	s1_new = (const unsigned char *)s1;
-	s2_new = (const unsigned char *)s2;
-	while (i < n && (s1_new[i] == s2_new[i]))
-		i++;
-	if (i == n)
-		return (0);
-	return (s1_new[i] - s2_new[i]);
+	if (!s)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	rest = s_len - start;
+	if (len < rest)
+		real_size = len;
+	else
+		real_size = rest;
+	sub = (char *)malloc(real_size + 1);
+	if (!sub)
+		return (NULL);
+	ft_strlcpy(sub, s + start, real_size + 1);
+	return (sub);
 }

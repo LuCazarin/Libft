@@ -6,7 +6,7 @@
 /*   By: luafranc <luafranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 16:03:37 by luafranc          #+#    #+#             */
-/*   Updated: 2026/06/02 15:22:38 by luafranc         ###   ########.fr       */
+/*   Updated: 2026/06/09 16:23:14 by luafranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,18 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	if (!big)
-	{
+	if (little[0] == '\0')
 		return ((char *)big);
-	}
-	while (big[i] && i < len)
+	i = 0;
+	while (i < len && big[i])
 	{
 		if (big[i] == little[0])
 		{
 			j = 0;
-			while ((i + j) < len && big[i] && little[j] && big[i
-				+ j] == little[j])
+			while ((i + j) < len && little[j] && big[i + j] == little[j])
 				j++;
-			if (!little[j])
-			{
+			if (little[j] == '\0')
 				return ((char *)big + i);
-			}
 		}
 		i++;
 	}

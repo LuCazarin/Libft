@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luafranc <luafranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 16:07:45 by luafranc          #+#    #+#             */
-/*   Updated: 2026/06/09 15:52:35 by luafranc         ###   ########.fr       */
+/*   Created: 2026/06/04 13:30:13 by luafranc          #+#    #+#             */
+/*   Updated: 2026/06/04 14:34:44 by luafranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	const unsigned char	*s1_new;
-	const unsigned char	*s2_new;
-	size_t				i;
+	char	*str;
+	size_t	size_total;
 
-	i = 0;
-	s1_new = (const unsigned char *)s1;
-	s2_new = (const unsigned char *)s2;
-	while (i < n && (s1_new[i] == s2_new[i]))
-		i++;
-	if (i == n)
-		return (0);
-	return (s1_new[i] - s2_new[i]);
+	if (!s1 || !s2)
+		return (NULL);
+	size_total = ft_strlen(s1) + ft_strlen(s2) + 1;
+	str = malloc(size_total);
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, s1, size_total);
+	ft_strlcat(str, s2, size_total);
+	return (str);
 }

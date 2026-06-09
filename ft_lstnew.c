@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luafranc <luafranc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: luafranc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/28 18:47:34 by luafranc          #+#    #+#             */
-/*   Updated: 2026/06/05 10:17:09 by luafranc         ###   ########.fr       */
+/*   Created: 2026/06/09 17:17:52 by luafranc          #+#    #+#             */
+/*   Updated: 2026/06/09 17:21:49 by luafranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+t_list *ft_lstnew(void *content)
 {
-	size_t	len;
+	t_list *node;
 
-	len = ft_strlen(s);
-	if ((char)c == '\0')
-		return ((char *)&s[len]);
-	while (*s)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
-	}
-	return (NULL);
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

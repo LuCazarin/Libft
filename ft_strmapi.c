@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luafranc <luafranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 16:07:45 by luafranc          #+#    #+#             */
-/*   Updated: 2026/06/09 15:52:35 by luafranc         ###   ########.fr       */
+/*   Created: 2026/06/07 10:47:00 by luafranc          #+#    #+#             */
+/*   Updated: 2026/06/07 11:08:29 by luafranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	const unsigned char	*s1_new;
-	const unsigned char	*s2_new;
-	size_t				i;
+	unsigned int	i;
+	char			*new_s;
+	size_t			len;
 
+	if (!s || !f)
+		return (NULL);
 	i = 0;
-	s1_new = (const unsigned char *)s1;
-	s2_new = (const unsigned char *)s2;
-	while (i < n && (s1_new[i] == s2_new[i]))
+	len = ft_strlen(s);
+	new_s = (char *)malloc((len + 1) * (sizeof(char)));
+	if (!new_s)
+		return (NULL);
+	while (s[i])
+	{
+		new_s[i] = f(i, s[i]);
 		i++;
-	if (i == n)
-		return (0);
-	return (s1_new[i] - s2_new[i]);
+	}
+	new_s[i] = '\0';
+	return (new_s);
 }
