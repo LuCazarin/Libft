@@ -6,7 +6,7 @@
 /*   By: luafranc <luafranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 15:51:05 by luafranc          #+#    #+#             */
-/*   Updated: 2026/06/11 16:17:30 by luafranc         ###   ########.fr       */
+/*   Updated: 2026/06/12 10:17:35 by luafranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		last_node->next = new;
 	}
 }
-
-
-	

@@ -6,7 +6,7 @@
 /*   By: luafranc <luafranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 16:59:59 by luafranc          #+#    #+#             */
-/*   Updated: 2026/06/11 17:24:12 by luafranc         ###   ########.fr       */
+/*   Updated: 2026/06/12 10:13:16 by luafranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*next_node;
-	t_list	*current;   
-	
+	t_list	*current;
+
 	if (!lst || !del)
 		return ;
 	current = *lst;
@@ -28,5 +28,3 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
-
-
