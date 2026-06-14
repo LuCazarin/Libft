@@ -261,7 +261,7 @@ This project strengthened my understanding of:
 
 ## Author
 
-Jamielly R.
+Luana Cazarin
 
 42 Login: luafranc
 
