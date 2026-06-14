@@ -75,107 +75,7 @@ All functions were implemented following the 42 Norm and compiled with:
 | `ft_strtrim`  | Removes characters from both ends       |
 | `ft_split`    | Splits a string into substrings         |
 | `ft_strmapi`  | Applies a function to each character    |
-| `ft_striteri` | Iterates through a st
-Function	Description
-ft_putchar_fd	Writes a character to a file descriptor
-ft_putstr_fd	Writes a string to a file descriptor
-ft_putendl_fd	Writes a string followed by a newline
-ft_putnbr_fd	Writes a number to a file descriptor
-Linked List Functions
-Function	Description
-ft_lstnew	Creates a new node
-ft_lstadd_front	Adds a node at the beginning
-ft_lstsize	Counts nodes in a list
-ft_lstlast	Returns the last node
-ft_lstadd_back	Adds a node at the end
-ft_lstdelone	Deletes a single node
-ft_lstclear	Deletes an entire list
-ft_lstiter	Applies a function to every node
-ft_lstmap	Creates a new transformed list
-Instructions
-Requirements
-GCC or Clang
-Make
-Linux or macOS
-Compile
-make
-This generates:
-
-libft.a
-Clean Object Files
-make clean
-Remove All Generated Files
-make fclean
-Rebuild Everything
-make re
-Usage
-Include the header:
-
-#include "libft.h"
-Compile your project with the library:
-
-gcc main.c libft.a
-or
-
-gcc main.c -L. -lft
-Technical Choices
-Some implementation decisions made during the project:
-
-Static library architecture
-Modular source code organization
-Defensive memory allocation checks
-Reusable helper functions
-Linked list abstraction through generic void * content
-Strict compliance with the 42 Norm
-Testing
-The project was validated using:
-
-Custom test cases
-Edge case testing
-Norminette
-Valgrind memory analysis
-Example:
-
-valgrind --leak-check=full ./program
-Resources
-Documentation
-The C Programming Language — Brian W. Kernighan & Dennis M. Ritchie
-Linux Manual Pages (man)
-POSIX Documentation
-GNU C Documentation
-42 Subject PDF
-References
-https://man7.org/linux/man-pages/
-https://cplusplus.com/
-https://developer.mozilla.org/
-https://www.geeksforgeeks.org/c-programming-language/
-AI Usage
-Artificial Intelligence tools were used as learning assistants for:
-
-Concept clarification
-Documentation support
-Debugging guidance
-Understanding edge cases
-Code review suggestions
-All implementations, testing, debugging, and final validation were completed manually by the author.
-
-What I Learned
-This project strengthened my understanding of:
-
-Memory allocation and deallocation
-Pointer arithmetic
-String manipulation
-Static libraries
-Linked lists
-Defensive programming
-UNIX development workflows
-Writing reusable C code
-Author
-Luana Cazarin
-
-42 Login: luafranc
-
-GitHub: https://github.com/LuCazarinring               |
+| `ft_striteri` | Iterates through a string               |
 
 ### Memory Functions
 
@@ -361,7 +261,7 @@ This project strengthened my understanding of:
 
 ## Author
 
-Luana Cazarin
+Jamielly R.
 
 42 Login: luafranc
 
